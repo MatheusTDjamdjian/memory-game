@@ -8,7 +8,6 @@ function CardFrontBack(icon, altIcon) {
       const $origin = event.target;
       const $CardFrontBack = $origin.closest('.card_front_back');
 
-      console.log($origin);
       console.log($CardFrontBack);
 
       $CardFrontBack.classList.toggle('-active')
