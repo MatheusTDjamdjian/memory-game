@@ -2,15 +2,16 @@ import CardGame from "../CardGame"
 import "./style.css"
 
 function CardFrontBack() {
-    window.cardFrontBack = {}
-    window.cardFrontBack.handleClick = (event) => {
-        const $origin = event.target
-        const $CardFrontBack = $origin.parentNode.parentNode.parentNode
 
-        console.log($origin)
-        console.log($CardFrontBack)
+  window.cardFrontBack = {};
+  window.cardFrontBack.handleClick = (event) => {
+      const $origin = event.target;
+      const $CardFrontBack = $origin.closest('.card_front_back');
 
-        $CardFrontBack.classList.add('-active')
+      console.log($origin);
+      console.log($CardFrontBack);
+
+      $CardFrontBack.classList.toggle('-active')
     }
 
     return /* html */`
