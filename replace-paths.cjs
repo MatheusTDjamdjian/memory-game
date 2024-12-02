@@ -15,7 +15,7 @@ function replacePathsInDir(dir) {
       replacePathsInDir(filePath); // Substituir em subdiretórios
     } else if (file.endsWith('.js')) {
       let content = fs.readFileSync(filePath, 'utf-8');
-      content = content.replace(/img\//g, 'memory-game/assets/');
+      content = content.replace(/img\//g, 'memory-game/img/');
       fs.writeFileSync(filePath, content, 'utf-8');
     }
   });
