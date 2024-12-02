@@ -2,7 +2,20 @@ const fs = require('fs');
 const path = require('path');
 
 const buildDir = path.resolve(__dirname, 'dist'); // Caminho do build
+const imgDir = path.resolve(__dirname, 'img'); // Caminho do build
 const targetDir = path.join(buildDir, 'assets'); // Alvo dos JS
+
+const imgFiles = fs.readdirSync(imgDir);
+const imgDistDir = path.resolve(buildDir, 'img');
+
+imgFiles.forEach(img => {
+  if(!fs.existsSync(imgDistDir)) {
+    fs.mkdir(imgDistDir, (e) => {
+      console.log(e);
+    });
+  }
+  fs.copyFileSync(path.resolve(imgDir, img), imgDistDir);
+});
 
 // Recursivamente substituir os caminhos nos arquivos JavaScript
 function replacePathsInDir(dir) {

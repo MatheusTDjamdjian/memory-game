@@ -1,5 +1,5 @@
 (function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))n(e);new MutationObserver(e=>{for(const r of e)if(r.type==="childList")for(const t of r.addedNodes)t.tagName==="LINK"&&t.rel==="modulepreload"&&n(t)}).observe(document,{childList:!0,subtree:!0});function c(e){const r={};return e.integrity&&(r.integrity=e.integrity),e.referrerPolicy&&(r.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?r.credentials="include":e.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function n(e){if(e.ep)return;e.ep=!0;const r=c(e);fetch(e.href,r)}})();function d(o=1){return`
-      <img class="arrow_down" data-currentPlayer= "${o}" src="/memory-game/img/IconArrowDown.png" alt="ícone de uma seta para baixo">
+      <img class="arrow_down" data-currentPlayer= "${o}" src="/img/IconArrowDown.png" alt="ícone de uma seta para baixo">
     `}function s(o){return`
       <p class="player_name">${o}</p>
     `}function i(o=0){return`
@@ -21,7 +21,7 @@
       </header>
     `}function l(o="cara-feliz",a="Cara Feliz"){return`
     <article class="card_game">
-      <img src="/memory-game/img/${o}.png" alt="${a}">
+      <img src="/img/${o}.png" alt="${a}">
     </article>
     `}function f(o,a){return window.cardFrontBack={},window.cardFrontBack.handleClick=c=>{const e=c.target.closest(".card_front_back");console.log(e),e.classList.toggle("-active")},`
       <article class="card_front_back" onClick="cardFrontBack.handleClick(event)">
